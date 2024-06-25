@@ -24,7 +24,7 @@ type apiResponse struct {
 }
 
 func (b *Bot) rawRequest(ctx context.Context, method string, params any, dest any) error {
-	var httpBody io.Reader = http.NoBody
+	var httpBody io.Reader = nil
 	var contentType string
 
 	if params != nil && !reflect.ValueOf(params).IsNil() {
